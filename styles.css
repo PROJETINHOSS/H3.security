@@ -1178,7 +1178,7 @@ a {
   }
 
   .mobile-nav-items a {
-    color: var(--text);
+    color: var(--text) !important;
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 600;
