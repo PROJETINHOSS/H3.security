@@ -55,18 +55,25 @@ body::before {
   pointer-events: none;
 }
 
-.watermark-selo {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  color: rgba(255, 215, 0, 0.15);
-  font-family: "Rajdhani", sans-serif;
-  font-size: 2rem;
-  font-weight: 700;
-  z-index: 1;
-  pointer-events: none;
-  transform: rotate(-15deg);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.mobile-menu-toggle span {
+  width: 20px;
+  height: 2px;
+  background: var(--primary-soft);
+  transition: transform 180ms ease;
+}
+
+.mobile-menu-toggle span:nth-child(2) {
+  transform: scaleX(0.8);
 }
 
 a {
@@ -1019,6 +1026,29 @@ a {
     padding: 16px 0 8px;
   }
 
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    gap: 20px;
+    padding: 80px 20px 20px;
+    font-size: 1.2rem;
+    z-index: 100;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
   .brand {
     align-items: flex-start;
     gap: 10px;
@@ -1177,5 +1207,10 @@ a {
 
   .footer {
     padding-bottom: 22px;
+  }
+
+  .background-eagle {
+    width: 80%;
+    opacity: 0.05;
   }
 }

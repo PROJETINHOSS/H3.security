@@ -85,3 +85,19 @@ if (metricCards.length > 0) {
     }
   });
 }
+
+// Mobile Menu Toggle
+const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+const nav = document.querySelector(".nav");
+
+if (mobileMenuToggle && nav) {
+  mobileMenuToggle.addEventListener("click", () => {
+    nav.classList.toggle("active");
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest(".topbar") && nav.classList.contains("active")) {
+      nav.classList.remove("active");
+    }
+  });
+}
