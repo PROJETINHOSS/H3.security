@@ -1284,12 +1284,14 @@ a {
     .mobile-nav {
       display: flex !important;
       bottom: 5px;
+      z-index: 10;
     }
     
     .brand {
       flex: 1;
       gap: 8px;
       align-self: flex-start;
+      z-index: 20;
     }
     
     .brand-text {
