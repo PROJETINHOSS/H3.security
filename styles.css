@@ -1175,82 +1175,39 @@ a {
     gap: 15px;
     min-width: max-content;
     animation: slideIn 0.3s ease-out;
+  }
 
-.nav {
-display: none;
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100vh;
-background: linear-gradient(135deg, rgba(0, 0, 0, 0.98), rgba(20, 20, 20, 0.95));
-flex-direction: column;
-gap: 30px;
-padding: 120px 40px 40px;
-font-size: 1.4rem;
-z-index: 99999;
-overflow-y: auto;
-animation: slideIn 0.4s ease-out;
-border-right: 2px solid rgba(255, 215, 0, 0.3);
-}
+  .mobile-nav-items a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    text-align: center;
+    white-space: nowrap;
+    flex-shrink: 0;
+    background: var(--panel);
+    border: 1px solid var(--line);
+  }
 
-.nav.active {
-display: flex;
-}
+  .mobile-nav-items a:hover {
+    background: var(--primary-soft);
+    color: var(--text);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(184, 134, 11, 0.2);
+    border-color: var(--primary-soft);
+  }
 
-@keyframes slideIn {
-from {
-transform: translateX(-100%);
-opacity: 0;
-}
-to {
-transform: translateX(0);
-opacity: 1;
-}
-}
+  @keyframes slideIn {
+    from {
+      transform: translateX(-100%);
       opacity: 0;
     }
     to {
       transform: translateX(0);
-      opacity: 1;
-    }
-  }
-
-  /* Menu Pop-up Profissional - Estilo Card */
-  .nav {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 85%;
-    max-width: 400px;
-    height: auto;
-    max-height: 80vh;
-    background: var(--panel);
-    border: 2px solid var(--primary-soft);
-    border-radius: 30px;
-    flex-direction: column;
-    gap: 8px;
-    padding: 30px;
-    font-size: 1.1rem;
-    z-index: 99999;
-    overflow-y: auto;
-    animation: popIn 0.3s ease-out;
-    box-shadow: 0 24px 60px rgba(184, 134, 11, 0.3);
-  }
-
-  .nav.active {
-    display: flex;
-  }
-
-  @keyframes popIn {
-    from {
-      transform: translate(-50%, -50%) scale(0.8);
-      opacity: 0;
-    }
-    to {
-      transform: translate(-50%, -50%) scale(1);
       opacity: 1;
     }
   }
