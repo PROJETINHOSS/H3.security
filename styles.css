@@ -86,35 +86,7 @@ body::before {
 }
 
 .mobile-menu-toggle {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  background: linear-gradient(135deg, var(--panel), var(--panel-strong));
-  border: 2px solid var(--primary-soft);
-  padding: 12px;
-  cursor: pointer;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(184, 134, 11, 0.2);
-}
-
-.mobile-menu-toggle:hover {
-  background: linear-gradient(135deg, var(--panel-strong), var(--primary-soft));
-  border-color: var(--text);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(184, 134, 11, 0.3);
-}
-
-.mobile-menu-toggle span {
-  width: 25px;
-  height: 3px;
-  background: var(--primary-soft);
-  transition: transform 180ms ease;
-  border-radius: 2px;
-}
-
-.mobile-menu-toggle span:nth-child(2) {
-  transform: scaleX(0.8);
+  display: none;
 }
 
 a {
@@ -1183,58 +1155,13 @@ a {
   /* Menu Pop-up Profissional - Estilo Card */
   .nav {
     display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 85%;
-    max-width: 400px;
-    height: auto;
-    max-height: 80vh;
-    background: var(--panel);
-    border: 2px solid var(--primary-soft);
-    border-radius: 30px;
-    flex-direction: column;
-    gap: 8px;
-    padding: 30px;
-    font-size: 1.1rem;
-    z-index: 99999;
-    overflow-y: auto;
-    animation: popIn 0.3s ease-out;
-    box-shadow: 0 24px 60px rgba(184, 134, 11, 0.3);
   }
 
-  .nav.active {
-    display: flex;
-  }
-
-  @keyframes popIn {
-    from {
-      transform: translate(-50%, -50%) scale(0.8);
-      opacity: 0;
+  /* Esconde completamente o menu em mobile */
+  @media (max-width: 680px) {
+    .nav {
+      display: none !important;
     }
-    to {
-      transform: translate(-50%, -50%) scale(1);
-      opacity: 1;
-    }
-  }
-
-  .nav a {
-    color: var(--text);
-    text-decoration: none;
-    padding: 12px 16px;
-    border-radius: 12px;
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
-    text-align: center;
-    font-weight: 600;
-  }
-
-  .nav a:hover {
-    background: var(--primary-soft);
-    color: var(--text);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(184, 134, 11, 0.2);
   }
 
   .mobile-menu-close {
@@ -1265,7 +1192,7 @@ a {
 
   .nav.active ~ .mobile-menu-close,
   .nav.active ~ * .mobile-menu-close {
-    display: flex;
+    display: none;
   }
 
   /* Overlay escuro quando menu abre */

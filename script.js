@@ -86,39 +86,37 @@ if (metricCards.length > 0) {
   });
 }
 
-// Mobile Menu Toggle
-const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
-const mobileMenuClose = document.querySelector(".mobile-menu-close");
-const nav = document.querySelector(".nav");
+// Mobile Menu Toggle - DESATIVADO
+// const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+// const mobileMenuClose = document.querySelector(".mobile-menu-close");
+// const nav = document.querySelector(".nav");
 
-console.log('Menu elements:', { mobileMenuToggle, mobileMenuClose, nav });
+// if (mobileMenuToggle && nav) {
+//   mobileMenuToggle.addEventListener("click", (e) => {
+//     e.preventDefault();
+//     console.log('Toggle clicked');
+//     nav.classList.toggle("active");
+//   });
 
-if (mobileMenuToggle && nav) {
-  mobileMenuToggle.addEventListener("click", (e) => {
-    e.preventDefault();
-    console.log('Toggle clicked');
-    nav.classList.toggle("active");
-  });
+//   if (mobileMenuClose) {
+//     mobileMenuClose.addEventListener("click", (e) => {
+//       e.preventDefault();
+//       console.log('Close clicked');
+//       nav.classList.remove("active");
+//     });
+//   }
 
-  if (mobileMenuClose) {
-    mobileMenuClose.addEventListener("click", (e) => {
-      e.preventDefault();
-      console.log('Close clicked');
-      nav.classList.remove("active");
-    });
-  }
+//   document.addEventListener("click", (event) => {
+//     if (!event.target.closest(".nav") && nav.classList.contains("active")) {
+//       console.log('Outside click');
+//       nav.classList.remove("active");
+//     }
+//   });
 
-  document.addEventListener("click", (event) => {
-    if (!event.target.closest(".nav") && nav.classList.contains("active")) {
-      console.log('Outside click');
-      nav.classList.remove("active");
-    }
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && nav.classList.contains("active")) {
-      console.log('Escape pressed');
-      nav.classList.remove("active");
-    }
-  });
-}
+//   document.addEventListener("keydown", (event) => {
+//     if (event.key === "Escape" && nav.classList.contains("active")) {
+//       console.log('Escape pressed');
+//       nav.classList.remove("active");
+//     }
+//   });
+// }
