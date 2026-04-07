@@ -1180,7 +1180,7 @@ a {
     z-index: 99999 !important;
   }
 
-  /* Menu Pop-up Profissional */
+  /* Menu Pop-up Profissional - Estilo Card */
   .nav {
     display: none;
     position: fixed;
@@ -1191,9 +1191,9 @@ a {
     max-width: 400px;
     height: auto;
     max-height: 80vh;
-    background: linear-gradient(135deg, var(--panel) 0%, var(--panel-strong) 100%);
+    background: var(--panel);
     border: 2px solid var(--primary-soft);
-    border-radius: 20px;
+    border-radius: 30px;
     flex-direction: column;
     gap: 8px;
     padding: 30px;
@@ -1201,7 +1201,7 @@ a {
     z-index: 99999;
     overflow-y: auto;
     animation: popIn 0.3s ease-out;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 0 4px rgba(255, 215, 0, 0.3);
+    box-shadow: 0 24px 60px rgba(184, 134, 11, 0.3);
   }
 
   .nav.active {
@@ -1217,6 +1217,24 @@ a {
       transform: translate(-50%, -50%) scale(1);
       opacity: 1;
     }
+  }
+
+  .nav a {
+    color: var(--text);
+    text-decoration: none;
+    padding: 12px 16px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .nav a:hover {
+    background: var(--primary-soft);
+    color: var(--text);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(184, 134, 11, 0.2);
   }
 
   .mobile-menu-close {
