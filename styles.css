@@ -55,6 +55,20 @@ body::before {
   pointer-events: none;
 }
 
+.watermark-small {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: rgba(255, 215, 0, 0.08);
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  z-index: 1;
+  pointer-events: none;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
 .mobile-menu-toggle {
   display: flex;
   flex-direction: column;
@@ -1262,5 +1276,12 @@ a {
   .background-eagle {
     width: 80%;
     opacity: 0.05;
+  }
+
+  .watermark-small {
+    bottom: 15px;
+    right: 15px;
+    font-size: 1rem;
+    opacity: 0.06;
   }
 }
