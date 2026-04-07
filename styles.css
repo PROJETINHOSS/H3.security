@@ -1283,7 +1283,7 @@ a {
     
     .mobile-nav {
       display: flex !important;
-      bottom: 10px;
+      bottom: 5px;
     }
     
     .brand {
@@ -1312,7 +1312,7 @@ a {
     }
     
     main {
-      margin-bottom: 60px;
+      margin-bottom: 80px;
     }
   }
   .nav.active::before {
