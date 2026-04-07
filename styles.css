@@ -1278,6 +1278,7 @@ a {
     .topbar {
       gap: 12px;
       padding: 25px 0 15px;
+      align-items: flex-start;
     }
     
     .mobile-nav {
@@ -1288,6 +1289,7 @@ a {
     .brand {
       flex: 1;
       gap: 8px;
+      align-self: flex-start;
     }
     
     .brand-text {
