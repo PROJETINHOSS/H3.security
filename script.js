@@ -86,41 +86,6 @@ if (metricCards.length > 0) {
   });
 }
 
-// Mobile Menu Toggle - DESATIVADO
-// const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
-// const mobileMenuClose = document.querySelector(".mobile-menu-close");
-// const nav = document.querySelector(".nav");
-
-// if (mobileMenuToggle && nav) {
-//   mobileMenuToggle.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     console.log('Toggle clicked');
-//     nav.classList.toggle("active");
-//   });
-
-//   if (mobileMenuClose) {
-//     mobileMenuClose.addEventListener("click", (e) => {
-//       e.preventDefault();
-//       console.log('Close clicked');
-//       nav.classList.remove("active");
-//     });
-//   }
-
-//   document.addEventListener("click", (event) => {
-//     if (!event.target.closest(".nav") && nav.classList.contains("active")) {
-//       console.log('Outside click');
-//       nav.classList.remove("active");
-//     }
-//   });
-
-//   document.addEventListener("keydown", (event) => {
-//     if (event.key === "Escape" && nav.classList.contains("active")) {
-//       console.log('Escape pressed');
-//       nav.classList.remove("active");
-//     }
-//   });
-// }
-
 // Menu Mobile Profissional
 const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
 const nav = document.querySelector(".nav");
@@ -129,5 +94,19 @@ if (mobileMenuToggle && nav) {
   mobileMenuToggle.addEventListener("click", (e) => {
     e.preventDefault();
     nav.classList.toggle("active");
+  });
+
+  // Fecha o menu ao clicar fora
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest(".nav") && !event.target.closest(".mobile-menu-toggle") && nav.classList.contains("active")) {
+      nav.classList.remove("active");
+    }
+  });
+
+  // Fecha o menu com ESC
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && nav.classList.contains("active")) {
+      nav.classList.remove("active");
+    }
   });
 }
