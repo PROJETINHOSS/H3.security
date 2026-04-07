@@ -98,7 +98,6 @@ if (mobileMenuToggle && nav) {
     e.preventDefault();
     console.log('Toggle clicked');
     nav.classList.toggle("active");
-    document.body.classList.toggle("nav-active");
   });
 
   if (mobileMenuClose) {
@@ -106,15 +105,13 @@ if (mobileMenuToggle && nav) {
       e.preventDefault();
       console.log('Close clicked');
       nav.classList.remove("active");
-      document.body.classList.remove("nav-active");
     });
   }
 
   document.addEventListener("click", (event) => {
-    if (!event.target.closest(".topbar") && nav.classList.contains("active")) {
+    if (!event.target.closest(".nav") && nav.classList.contains("active")) {
       console.log('Outside click');
       nav.classList.remove("active");
-      document.body.classList.remove("nav-active");
     }
   });
 
@@ -122,7 +119,6 @@ if (mobileMenuToggle && nav) {
     if (event.key === "Escape" && nav.classList.contains("active")) {
       console.log('Escape pressed');
       nav.classList.remove("active");
-      document.body.classList.remove("nav-active");
     }
   });
 }
