@@ -1275,8 +1275,14 @@ a {
 
   /* Esconde completamente o menu em mobile */
   @media (max-width: 680px) {
+    .topbar {
+      gap: 12px;
+      padding: 25px 0 15px;
+    }
+    
     .mobile-nav {
       display: flex !important;
+      bottom: 10px;
     }
     
     .brand {
@@ -1301,6 +1307,10 @@ a {
       font-size: 0.85rem;
       padding: 10px 16px;
       min-height: 40px;
+    }
+    
+    main {
+      margin-bottom: 60px;
     }
   }
   .nav.active::before {
