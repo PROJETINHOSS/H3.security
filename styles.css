@@ -1101,7 +1101,7 @@ a {
     gap: 30px;
     padding: 120px 40px 40px;
     font-size: 1.4rem;
-    z-index: 9999;
+    z-index: 99999;
     overflow-y: auto;
     animation: slideIn 0.4s ease-out;
     border-right: 2px solid rgba(255, 215, 0, 0.3);
@@ -1139,7 +1139,7 @@ a {
     justify-content: center;
     transition: all 0.3s ease;
     font-weight: bold;
-    z-index: 10000;
+    z-index: 100000;
   }
 
   .mobile-menu-close:hover {
@@ -1150,6 +1150,11 @@ a {
 
   .nav.active ~ .mobile-menu-close {
     display: flex;
+  }
+
+  /* Quando o menu está ativo, esconde o conteúdo principal */
+  .nav.active ~ *:not(.mobile-menu-close) {
+    visibility: hidden;
   }
 
   .brand {
