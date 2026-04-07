@@ -1155,14 +1155,10 @@ a {
   /* Menu Mobile Profissional - Carousel Horizontal */
   .mobile-nav {
     display: none;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
     background: var(--panel);
     border-top: 2px solid var(--primary-soft);
     padding: 15px 20px;
-    z-index: 9999;
+    z-index: 10;
     box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.8);
     overflow-x: auto;
     overflow-y: hidden;
@@ -1276,22 +1272,22 @@ a {
   /* Esconde completamente o menu em mobile */
   @media (max-width: 680px) {
     .topbar {
+      display: flex;
+      flex-direction: column;
       gap: 12px;
-      padding: 25px 0 15px;
+      padding: 20px 0;
       align-items: flex-start;
     }
     
     .mobile-nav {
       display: flex !important;
-      bottom: 5px;
       z-index: 10;
     }
     
     .brand {
-      flex: 1;
+      display: flex;
       gap: 8px;
-      align-self: flex-start;
-      z-index: 20;
+      align-items: center;
     }
     
     .brand-text {
