@@ -1157,6 +1157,20 @@ a {
     visibility: hidden;
   }
 
+  /* Força o menu a ficar sobre tudo */
+  body.nav-active .page-shell,
+  body.nav-active .watermark-small,
+  body.nav-active .background-eagle {
+    opacity: 0.1;
+    pointer-events: none;
+  }
+
+  body.nav-active .nav {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
   .brand {
     align-items: flex-start;
     gap: 10px;
