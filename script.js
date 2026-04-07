@@ -88,12 +88,19 @@ if (metricCards.length > 0) {
 
 // Mobile Menu Toggle
 const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+const mobileMenuClose = document.querySelector(".mobile-menu-close");
 const nav = document.querySelector(".nav");
 
 if (mobileMenuToggle && nav) {
   mobileMenuToggle.addEventListener("click", () => {
     nav.classList.toggle("active");
   });
+
+  if (mobileMenuClose) {
+    mobileMenuClose.addEventListener("click", () => {
+      nav.classList.remove("active");
+    });
+  }
 
   document.addEventListener("click", (event) => {
     if (!event.target.closest(".topbar") && nav.classList.contains("active")) {
