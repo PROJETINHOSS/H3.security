@@ -1279,6 +1279,24 @@ a {
       display: flex !important;
     }
     
+    .brand {
+      flex: 1;
+      gap: 8px;
+    }
+    
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .brand-text strong {
+      font-size: 0.9rem;
+    }
+    
+    .brand-text small {
+      font-size: 0.7rem;
+    }
+    
     .button.button-outline {
       font-size: 0.85rem;
       padding: 10px 16px;
