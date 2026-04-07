@@ -1152,6 +1152,42 @@ a {
     z-index: 99999 !important;
   }
 
+  /* Menu Mobile Profissional */
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--panel);
+    border-top: 2px solid var(--primary-soft);
+    padding: 15px 20px;
+    z-index: 9999;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.8);
+  }
+
+  .mobile-nav-items {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .mobile-nav-items a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-nav-items a:hover {
+    background: var(--primary-soft);
+    color: var(--text);
+  }
+
   /* Menu Pop-up Profissional - Estilo Card */
   .nav {
     display: none;
@@ -1161,6 +1197,10 @@ a {
   @media (max-width: 680px) {
     .nav {
       display: none !important;
+    }
+
+    .mobile-nav {
+      display: flex !important;
     }
   }
 

@@ -120,3 +120,14 @@ if (metricCards.length > 0) {
 //     }
 //   });
 // }
+
+// Menu Mobile Profissional
+const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+const nav = document.querySelector(".nav");
+
+if (mobileMenuToggle && nav) {
+  mobileMenuToggle.addEventListener("click", (e) => {
+    e.preventDefault();
+    nav.classList.toggle("active");
+  });
+}
