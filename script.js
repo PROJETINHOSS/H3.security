@@ -86,7 +86,7 @@ if (metricCards.length > 0) {
   });
 }
 
-// Menu Mobile Profissional
+// Menu Mobile Profissional - Carousel Horizontal
 const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
 const nav = document.querySelector(".nav");
 
@@ -94,6 +94,16 @@ if (mobileMenuToggle && nav) {
   mobileMenuToggle.addEventListener("click", (e) => {
     e.preventDefault();
     nav.classList.toggle("active");
+    
+    // Scroll suave para mostrar os itens
+    if (nav.classList.contains("active")) {
+      setTimeout(() => {
+        const firstItem = nav.querySelector('.mobile-nav-items a');
+        if (firstItem) {
+          firstItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }, 100);
+    }
   });
 
   // Fecha o menu ao clicar fora
