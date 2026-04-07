@@ -1089,7 +1089,7 @@ a {
   }
 
   .mobile-menu-close {
-    position: absolute;
+    position: fixed;
     top: 25px;
     right: 25px;
     background: var(--primary-soft);
@@ -1100,17 +1100,22 @@ a {
     border-radius: 50%;
     font-size: 1.3rem;
     cursor: pointer;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
     font-weight: bold;
+    z-index: 10000;
   }
 
   .mobile-menu-close:hover {
     background: var(--text);
     color: var(--primary-soft);
     transform: scale(1.1);
+  }
+
+  .nav.active ~ .mobile-menu-close {
+    display: flex;
   }
 
   .brand {
