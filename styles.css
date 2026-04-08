@@ -713,15 +713,6 @@ a {
   text-transform: uppercase;
 }
 
-.page-summary {
-  border: 1px solid var(--line);
-  border-radius: 28px;
-  padding: 24px;
-  background: linear-gradient(180deg, rgba(19, 19, 19, 0.98), rgba(8, 8, 8, 0.96));
-  box-shadow: var(--shadow);
-}
-
-
 .summary-metrics {
   display: grid;
   gap: 14px;
@@ -1678,4 +1669,172 @@ a {
   .mobile-nav {
     display: flex;
   }
+}
+
+/* --- Ajuste para remover o card lateral na página de contato --- */
+
+.page-hero.h3-hero-compact {
+    display: block; 
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Isso mata o 'card fantasma' que você marcou com o X */
+.h3-hero-compact::after, 
+.h3-image-stage::after,
+.page-hero::after {
+    display: none !important;
+    content: none !important;
+}
+
+.h3-hero-compact .hero-copy {
+    width: 100%;
+    max-width: none;
+}
+
+/* --- Faz o título ocupar a área total (Amarela) --- */
+.page-hero.h3-hero-compact {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important; /* Mantém o texto alinhado à esquerda */
+    max-width: 100% !important; /* Libera a largura total da página */
+}
+
+.page-hero.h3-hero-compact .hero-copy {
+    width: 100% !important;
+    max-width: 100% !important; /* Remove qualquer trava de largura do container do texto */
+}
+
+.page-hero.h3-hero-compact h1 {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: left !important;
+    /* Ajuste opcional: aumenta um pouco o espaçamento entre letras se quiser preencher mais */
+    letter-spacing: -0.02em; 
+}
+
+/* Força a seção a ignorar as colunas e ocupar a largura toda */
+section.page-hero.h3-hero-compact {
+    display: block !important; /* Desliga o sistema de colunas */
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-right: 0 !important;
+}
+
+/* Força o container do texto a se expandir */
+section.page-hero.h3-hero-compact .hero-copy {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block !important;
+}
+
+/* Faz o título ocupar o espaço total horizontal */
+section.page-hero.h3-hero-compact h1 {
+    width: 100% !important;
+    max-width: 100% !important;
+    white-space: normal !important; /* Garante que ele flua naturalmente */
+    display: block !important;
+}
+
+/* Aumenta a largura máxima da caixa de conteúdo na página de contato */
+.h3-hero-compact .hero-copy {
+    max-width: 100% !important; /* Remove o limite de largura */
+    width: 100% !important;
+}
+
+/* Garante que o título possa ocupar todo o espaço da nova caixa */
+.h3-hero-compact h1 {
+    max-width: 100% !important;
+    width: 100% !important;
+    display: block !important;
+}
+
+/* --- Melhora o contraste do texto sobre a imagem de fundo --- */
+
+/* Aplica uma sombra preta suave nas letras para dar leitura */
+.h3-hero-compact h1, 
+.h3-hero-compact .hero-text {
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9), 
+                 0px 0px 20px rgba(0, 0, 0, 0.5);
+    color: #ffffff !important; /* Força o branco puro */
+}
+
+/* Opcional: Adiciona um filtro de escurecimento na imagem de fundo se o texto ainda sumir */
+.page-hero.h3-hero-compact {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.3); /* Escurece o fundo em 30% */
+    background-blend-mode: overlay;
+}
+
+/* Garante que o negrito que você pediu fique bem visível */
+.h3-hero-compact .hero-text strong {
+    font-weight: 800 !important;
+    color: #fff !important;
+    display: inline-block;
+    padding-top: 10px;
+}
+
+.cta-section-brand {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url("assets/águia.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* RESOLUÇÃO DEFINITIVA DO TÍTULO ESTICADO */
+
+/* 1. Removemos a divisão de colunas da seção */
+section.page-hero.h3-hero-compact {
+    display: block !important;
+    grid-template-columns: 1fr !important; /* Força uma única coluna */
+    width: 100% !important;
+}
+
+/* 2. Forçamos a 'caixa' do texto a ignorar limites antigos */
+section.page-hero.h3-hero-compact .hero-copy {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: none !important; /* Garante que não haja comportamento de flexbox limitando */
+}
+
+/* 3. Fazemos o título (H1) ocupar toda a largura da linha */
+section.page-hero.h3-hero-compact h1 {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-right: 0 !important;
+    text-align: left !important;
+}
+
+/* --- SOLUÇÃO FINAL PARA O TÍTULO --- */
+
+/* 1. Removemos a trava da section */
+.page-hero.h3-image-stage {
+    display: block !important;
+    width: 100% !important;
+}
+
+/* 2. Este é o segredo: seleciona a DIV sem classe que está prendendo o texto */
+.page-hero.h3-image-stage > div {
+    width: 100% !important;
+    max-width: 100% !important; /* Libera a largura total */
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* 3. Faz o título ocupar a área amarela */
+.page-hero.h3-image-stage h1 {
+    width: 100% !important;
+    max-width: 1200px !important; /* Ajuste aqui se quiser que ele pare um pouco antes da borda */
+    display: block !important;
+    text-align: left !important;
+}
+
+/* 4. Garante que o texto abaixo (hero-text) também se ajuste */
+.page-hero.h3-image-stage .hero-text {
+    width: 100% !important;
+    max-width: 800px !important; /* Mantém o texto menor que o título para não ficar cansativo */
 }
